@@ -29,11 +29,29 @@ namespace RectangleApp
             this.txtWidth.Text = zeroString;
             this.lblArea.Text = zeroString;
             this.lblPerimeter.Text = zeroString;
+			this.txtLength.Select();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtLength_KeyPress(object sender, KeyPressEventArgs e)
+        {
+			this.ClearDimensions();
+        }
+
+	    private void ClearDimensions()
+	    {
+		    const string zeroString = "0";
+		    this.lblArea.Text = zeroString;
+		    this.lblPerimeter.Text = zeroString;
+        }
+
+        private void txtWidth_KeyPress(object sender, KeyPressEventArgs e)
+        {
+			this.ClearDimensions();
         }
     }
 }
