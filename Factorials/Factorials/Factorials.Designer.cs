@@ -57,6 +57,7 @@
             0,
             0});
             this.udNumber.Name = "udNumber";
+            this.udNumber.ReadOnly = true;
             this.udNumber.Size = new System.Drawing.Size(191, 22);
             this.udNumber.TabIndex = 1;
             this.udNumber.Value = new decimal(new int[] {
