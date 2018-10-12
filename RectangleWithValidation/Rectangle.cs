@@ -28,7 +28,7 @@ namespace RectangleWithValidation
                 textbox.Focus();
                 return false;
             }
-            else if (value == 0)
+            else if (value <= 0)
             {
                 MessageBox.Show($"{name} must be greater than zero", $"{name} Required");
                 textbox.Text = string.Empty;
