@@ -17,18 +17,30 @@ namespace RectangleWithValidation
 
         private void btnCalc_Click(object sender, EventArgs e)
         {
-            var rectangle = new Rectangle();
+	        try
+	        {
+		        var rectangle = new Rectangle();
 
-            if (this.IsValid(rectangle))
-            {
-                var length = Convert.ToDecimal(this.txtLength.Text);
-                var width = Convert.ToDecimal(this.txtWidth.Text);
+		        if (this.IsValid(rectangle))
+		        {
+			        var length = Convert.ToDecimal(this.txtLength.Text);
+			        var width = Convert.ToDecimal(this.txtWidth.Text);
 
-                rectangle.RectangleDimensions(length, width);
-                this.lblAreaValue.Text = rectangle.Area.ToString();
-                this.lblPerimeterValue.Text = rectangle.Perimeter.ToString();
-                this.btnCalc.Focus();
+			        rectangle.RectangleDimensions(length, width);
+			        this.lblAreaValue.Text = rectangle.Area.ToString();
+			        this.lblPerimeterValue.Text = rectangle.Perimeter.ToString();
+			        this.btnCalc.Focus();
+		        }
             }
+	        catch (Exception ex)
+	        {
+		        MessageBox.Show(
+			        $"{ex.Message}{Environment.NewLine}{Environment.NewLine}"
+			        + $"{ex.GetType()}{Environment.NewLine}{ex.StackTrace}",
+			        "Exception");
+
+	        }
+
 
         }
 
