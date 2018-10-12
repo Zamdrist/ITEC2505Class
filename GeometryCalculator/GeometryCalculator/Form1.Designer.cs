@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             this.grpShapes = new System.Windows.Forms.GroupBox();
-            this.rbRectangle = new System.Windows.Forms.RadioButton();
-            this.rbSquare = new System.Windows.Forms.RadioButton();
-            this.rbParallelogram = new System.Windows.Forms.RadioButton();
-            this.rbRhombus = new System.Windows.Forms.RadioButton();
-            this.rbTriangle = new System.Windows.Forms.RadioButton();
-            this.rbTrapezoid = new System.Windows.Forms.RadioButton();
             this.rbCircle = new System.Windows.Forms.RadioButton();
+            this.rbTrapezoid = new System.Windows.Forms.RadioButton();
+            this.rbTriangle = new System.Windows.Forms.RadioButton();
+            this.rbRhombus = new System.Windows.Forms.RadioButton();
+            this.rbParallelogram = new System.Windows.Forms.RadioButton();
+            this.rbSquare = new System.Windows.Forms.RadioButton();
+            this.rbRectangle = new System.Windows.Forms.RadioButton();
             this.grpDimensions = new System.Windows.Forms.GroupBox();
-            this.rbArea = new System.Windows.Forms.RadioButton();
-            this.rbPerimeter = new System.Windows.Forms.RadioButton();
             this.rbAreaPerimeter = new System.Windows.Forms.RadioButton();
+            this.rbPerimeter = new System.Windows.Forms.RadioButton();
+            this.rbArea = new System.Windows.Forms.RadioButton();
             this.txtRectangleLength = new System.Windows.Forms.TextBox();
             this.txtRectangleWidth = new System.Windows.Forms.TextBox();
             this.lblLength = new System.Windows.Forms.Label();
@@ -64,12 +64,20 @@
             this.txtRadius = new System.Windows.Forms.TextBox();
             this.lblRadius = new System.Windows.Forms.Label();
             this.exitBtn = new System.Windows.Forms.Button();
+            this.kiteBtn = new System.Windows.Forms.RadioButton();
+            this.numberTxt = new System.Windows.Forms.TextBox();
+            this.percentTxt = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.lblResult = new System.Windows.Forms.Label();
             this.grpShapes.SuspendLayout();
             this.grpDimensions.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpShapes
             // 
+            this.grpShapes.Controls.Add(this.kiteBtn);
             this.grpShapes.Controls.Add(this.rbCircle);
             this.grpShapes.Controls.Add(this.rbTrapezoid);
             this.grpShapes.Controls.Add(this.rbTriangle);
@@ -84,65 +92,17 @@
             this.grpShapes.TabStop = false;
             this.grpShapes.Text = "Shapes";
             // 
-            // rbRectangle
+            // rbCircle
             // 
-            this.rbRectangle.AutoSize = true;
-            this.rbRectangle.Location = new System.Drawing.Point(34, 35);
-            this.rbRectangle.Name = "rbRectangle";
-            this.rbRectangle.Size = new System.Drawing.Size(93, 21);
-            this.rbRectangle.TabIndex = 0;
-            this.rbRectangle.TabStop = true;
-            this.rbRectangle.Text = "Rectangle";
-            this.rbRectangle.UseVisualStyleBackColor = true;
-            this.rbRectangle.CheckedChanged += new System.EventHandler(this.rbRectangle_CheckedChanged);
-            // 
-            // rbSquare
-            // 
-            this.rbSquare.AutoSize = true;
-            this.rbSquare.Location = new System.Drawing.Point(34, 62);
-            this.rbSquare.Name = "rbSquare";
-            this.rbSquare.Size = new System.Drawing.Size(75, 21);
-            this.rbSquare.TabIndex = 1;
-            this.rbSquare.TabStop = true;
-            this.rbSquare.Text = "Square";
-            this.rbSquare.UseVisualStyleBackColor = true;
-            this.rbSquare.CheckedChanged += new System.EventHandler(this.rbSquare_CheckedChanged);
-            // 
-            // rbParallelogram
-            // 
-            this.rbParallelogram.AutoSize = true;
-            this.rbParallelogram.Location = new System.Drawing.Point(34, 89);
-            this.rbParallelogram.Name = "rbParallelogram";
-            this.rbParallelogram.Size = new System.Drawing.Size(116, 21);
-            this.rbParallelogram.TabIndex = 2;
-            this.rbParallelogram.TabStop = true;
-            this.rbParallelogram.Text = "Parallelogram";
-            this.rbParallelogram.UseVisualStyleBackColor = true;
-            this.rbParallelogram.CheckedChanged += new System.EventHandler(this.rbParallelogram_CheckedChanged);
-            // 
-            // rbRhombus
-            // 
-            this.rbRhombus.AutoSize = true;
-            this.rbRhombus.Location = new System.Drawing.Point(34, 116);
-            this.rbRhombus.Name = "rbRhombus";
-            this.rbRhombus.Size = new System.Drawing.Size(89, 21);
-            this.rbRhombus.TabIndex = 3;
-            this.rbRhombus.TabStop = true;
-            this.rbRhombus.Text = "Rhombus";
-            this.rbRhombus.UseVisualStyleBackColor = true;
-            this.rbRhombus.CheckedChanged += new System.EventHandler(this.rbRhombus_CheckedChanged);
-            // 
-            // rbTriangle
-            // 
-            this.rbTriangle.AutoSize = true;
-            this.rbTriangle.Location = new System.Drawing.Point(34, 143);
-            this.rbTriangle.Name = "rbTriangle";
-            this.rbTriangle.Size = new System.Drawing.Size(81, 21);
-            this.rbTriangle.TabIndex = 4;
-            this.rbTriangle.TabStop = true;
-            this.rbTriangle.Text = "Triangle";
-            this.rbTriangle.UseVisualStyleBackColor = true;
-            this.rbTriangle.CheckedChanged += new System.EventHandler(this.rbTriangle_CheckedChanged);
+            this.rbCircle.AutoSize = true;
+            this.rbCircle.Location = new System.Drawing.Point(34, 197);
+            this.rbCircle.Name = "rbCircle";
+            this.rbCircle.Size = new System.Drawing.Size(64, 21);
+            this.rbCircle.TabIndex = 6;
+            this.rbCircle.TabStop = true;
+            this.rbCircle.Text = "Circle";
+            this.rbCircle.UseVisualStyleBackColor = true;
+            this.rbCircle.CheckedChanged += new System.EventHandler(this.rbCircle_CheckedChanged);
             // 
             // rbTrapezoid
             // 
@@ -156,17 +116,65 @@
             this.rbTrapezoid.UseVisualStyleBackColor = true;
             this.rbTrapezoid.CheckedChanged += new System.EventHandler(this.rbTrapezoid_CheckedChanged);
             // 
-            // rbCircle
+            // rbTriangle
             // 
-            this.rbCircle.AutoSize = true;
-            this.rbCircle.Location = new System.Drawing.Point(34, 197);
-            this.rbCircle.Name = "rbCircle";
-            this.rbCircle.Size = new System.Drawing.Size(64, 21);
-            this.rbCircle.TabIndex = 6;
-            this.rbCircle.TabStop = true;
-            this.rbCircle.Text = "Circle";
-            this.rbCircle.UseVisualStyleBackColor = true;
-            this.rbCircle.CheckedChanged += new System.EventHandler(this.rbCircle_CheckedChanged);
+            this.rbTriangle.AutoSize = true;
+            this.rbTriangle.Location = new System.Drawing.Point(34, 143);
+            this.rbTriangle.Name = "rbTriangle";
+            this.rbTriangle.Size = new System.Drawing.Size(81, 21);
+            this.rbTriangle.TabIndex = 4;
+            this.rbTriangle.TabStop = true;
+            this.rbTriangle.Text = "Triangle";
+            this.rbTriangle.UseVisualStyleBackColor = true;
+            this.rbTriangle.CheckedChanged += new System.EventHandler(this.rbTriangle_CheckedChanged);
+            // 
+            // rbRhombus
+            // 
+            this.rbRhombus.AutoSize = true;
+            this.rbRhombus.Location = new System.Drawing.Point(34, 116);
+            this.rbRhombus.Name = "rbRhombus";
+            this.rbRhombus.Size = new System.Drawing.Size(89, 21);
+            this.rbRhombus.TabIndex = 3;
+            this.rbRhombus.TabStop = true;
+            this.rbRhombus.Text = "Rhombus";
+            this.rbRhombus.UseVisualStyleBackColor = true;
+            this.rbRhombus.CheckedChanged += new System.EventHandler(this.rbRhombus_CheckedChanged);
+            // 
+            // rbParallelogram
+            // 
+            this.rbParallelogram.AutoSize = true;
+            this.rbParallelogram.Location = new System.Drawing.Point(34, 89);
+            this.rbParallelogram.Name = "rbParallelogram";
+            this.rbParallelogram.Size = new System.Drawing.Size(116, 21);
+            this.rbParallelogram.TabIndex = 2;
+            this.rbParallelogram.TabStop = true;
+            this.rbParallelogram.Text = "Parallelogram";
+            this.rbParallelogram.UseVisualStyleBackColor = true;
+            this.rbParallelogram.CheckedChanged += new System.EventHandler(this.rbParallelogram_CheckedChanged);
+            // 
+            // rbSquare
+            // 
+            this.rbSquare.AutoSize = true;
+            this.rbSquare.Location = new System.Drawing.Point(34, 62);
+            this.rbSquare.Name = "rbSquare";
+            this.rbSquare.Size = new System.Drawing.Size(75, 21);
+            this.rbSquare.TabIndex = 1;
+            this.rbSquare.TabStop = true;
+            this.rbSquare.Text = "Square";
+            this.rbSquare.UseVisualStyleBackColor = true;
+            this.rbSquare.CheckedChanged += new System.EventHandler(this.rbSquare_CheckedChanged);
+            // 
+            // rbRectangle
+            // 
+            this.rbRectangle.AutoSize = true;
+            this.rbRectangle.Location = new System.Drawing.Point(34, 35);
+            this.rbRectangle.Name = "rbRectangle";
+            this.rbRectangle.Size = new System.Drawing.Size(93, 21);
+            this.rbRectangle.TabIndex = 0;
+            this.rbRectangle.TabStop = true;
+            this.rbRectangle.Text = "Rectangle";
+            this.rbRectangle.UseVisualStyleBackColor = true;
+            this.rbRectangle.CheckedChanged += new System.EventHandler(this.rbRectangle_CheckedChanged);
             // 
             // grpDimensions
             // 
@@ -180,6 +188,26 @@
             this.grpDimensions.TabStop = false;
             this.grpDimensions.Text = "Dimensions";
             // 
+            // rbAreaPerimeter
+            // 
+            this.rbAreaPerimeter.AutoSize = true;
+            this.rbAreaPerimeter.Location = new System.Drawing.Point(22, 93);
+            this.rbAreaPerimeter.Name = "rbAreaPerimeter";
+            this.rbAreaPerimeter.Size = new System.Drawing.Size(137, 21);
+            this.rbAreaPerimeter.TabIndex = 2;
+            this.rbAreaPerimeter.Text = "Area && Perimeter";
+            this.rbAreaPerimeter.UseVisualStyleBackColor = true;
+            // 
+            // rbPerimeter
+            // 
+            this.rbPerimeter.AutoSize = true;
+            this.rbPerimeter.Location = new System.Drawing.Point(22, 66);
+            this.rbPerimeter.Name = "rbPerimeter";
+            this.rbPerimeter.Size = new System.Drawing.Size(90, 21);
+            this.rbPerimeter.TabIndex = 1;
+            this.rbPerimeter.Text = "Perimeter";
+            this.rbPerimeter.UseVisualStyleBackColor = true;
+            // 
             // rbArea
             // 
             this.rbArea.AutoSize = true;
@@ -192,26 +220,6 @@
             this.rbArea.Text = "Area";
             this.rbArea.UseVisualStyleBackColor = true;
             this.rbArea.CheckedChanged += new System.EventHandler(this.rbArea_CheckedChanged);
-            // 
-            // rbPerimeter
-            // 
-            this.rbPerimeter.AutoSize = true;
-            this.rbPerimeter.Location = new System.Drawing.Point(22, 66);
-            this.rbPerimeter.Name = "rbPerimeter";
-            this.rbPerimeter.Size = new System.Drawing.Size(90, 21);
-            this.rbPerimeter.TabIndex = 1;
-            this.rbPerimeter.Text = "Perimeter";
-            this.rbPerimeter.UseVisualStyleBackColor = true;
-            // 
-            // rbAreaPerimeter
-            // 
-            this.rbAreaPerimeter.AutoSize = true;
-            this.rbAreaPerimeter.Location = new System.Drawing.Point(22, 93);
-            this.rbAreaPerimeter.Name = "rbAreaPerimeter";
-            this.rbAreaPerimeter.Size = new System.Drawing.Size(137, 21);
-            this.rbAreaPerimeter.TabIndex = 2;
-            this.rbAreaPerimeter.Text = "Area && Perimeter";
-            this.rbAreaPerimeter.UseVisualStyleBackColor = true;
             // 
             // txtRectangleLength
             // 
@@ -442,13 +450,83 @@
             this.exitBtn.UseVisualStyleBackColor = true;
             this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
             // 
+            // kiteBtn
+            // 
+            this.kiteBtn.AutoSize = true;
+            this.kiteBtn.Location = new System.Drawing.Point(34, 225);
+            this.kiteBtn.Name = "kiteBtn";
+            this.kiteBtn.Size = new System.Drawing.Size(53, 21);
+            this.kiteBtn.TabIndex = 7;
+            this.kiteBtn.TabStop = true;
+            this.kiteBtn.Text = "Kite";
+            this.kiteBtn.UseVisualStyleBackColor = true;
+            this.kiteBtn.CheckedChanged += new System.EventHandler(this.kiteBtn_CheckedChanged);
+            // 
+            // numberTxt
+            // 
+            this.numberTxt.Location = new System.Drawing.Point(568, 51);
+            this.numberTxt.Name = "numberTxt";
+            this.numberTxt.Size = new System.Drawing.Size(100, 22);
+            this.numberTxt.TabIndex = 28;
+            // 
+            // percentTxt
+            // 
+            this.percentTxt.Location = new System.Drawing.Point(568, 90);
+            this.percentTxt.Name = "percentTxt";
+            this.percentTxt.Size = new System.Drawing.Size(100, 22);
+            this.percentTxt.TabIndex = 29;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(508, 55);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(58, 17);
+            this.label1.TabIndex = 30;
+            this.label1.Text = "Number";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(511, 90);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(57, 17);
+            this.label2.TabIndex = 31;
+            this.label2.Text = "Percent";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(568, 162);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(192, 34);
+            this.button1.TabIndex = 32;
+            this.button1.Text = "Calculate Percentage";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // lblResult
+            // 
+            this.lblResult.AutoSize = true;
+            this.lblResult.Location = new System.Drawing.Point(704, 78);
+            this.lblResult.Name = "lblResult";
+            this.lblResult.Size = new System.Drawing.Size(56, 17);
+            this.lblResult.TabIndex = 33;
+            this.lblResult.Text = "Result: ";
+            this.lblResult.Click += new System.EventHandler(this.lblResult_Click);
+            // 
             // frnGeometryCalculator
             // 
             this.AcceptButton = this.btnCalculate;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.exitBtn;
-            this.ClientSize = new System.Drawing.Size(434, 509);
+            this.ClientSize = new System.Drawing.Size(780, 554);
+            this.Controls.Add(this.lblResult);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.percentTxt);
+            this.Controls.Add(this.numberTxt);
             this.Controls.Add(this.exitBtn);
             this.Controls.Add(this.lblRadius);
             this.Controls.Add(this.txtRadius);
@@ -477,6 +555,7 @@
             this.Controls.Add(this.grpShapes);
             this.Name = "frnGeometryCalculator";
             this.Text = "Geometry Calculator";
+            this.Load += new System.EventHandler(this.frnGeometryCalculator_Load);
             this.grpShapes.ResumeLayout(false);
             this.grpShapes.PerformLayout();
             this.grpDimensions.ResumeLayout(false);
@@ -524,6 +603,13 @@
         private System.Windows.Forms.TextBox txtRadius;
         private System.Windows.Forms.Label lblRadius;
         private System.Windows.Forms.Button exitBtn;
+        private System.Windows.Forms.RadioButton kiteBtn;
+        private System.Windows.Forms.TextBox numberTxt;
+        private System.Windows.Forms.TextBox percentTxt;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lblResult;
     }
 }
 
