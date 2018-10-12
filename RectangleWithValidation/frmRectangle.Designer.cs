@@ -67,6 +67,7 @@
             this.txtWidth.Name = "txtWidth";
             this.txtWidth.Size = new System.Drawing.Size(208, 22);
             this.txtWidth.TabIndex = 1;
+            this.txtWidth.TextChanged += new System.EventHandler(this.txtWidth_TextChanged);
             // 
             // lblWidth
             // 
@@ -174,7 +175,7 @@
             this.lblRequired.TabIndex = 12;
             this.lblRequired.Text = "Required";
             // 
-            // frmRectangle
+            // FormRectangle
             // 
             this.AcceptButton = this.btnCalc;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);

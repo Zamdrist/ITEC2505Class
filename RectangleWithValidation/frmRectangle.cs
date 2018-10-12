@@ -45,5 +45,11 @@ namespace RectangleWithValidation
             this.lblAreaValue.Text = string.Empty;
             this.lblPerimeterValue.Text = string.Empty;
         }
+
+        private void txtWidth_TextChanged(object sender, EventArgs e)
+        {
+	        this.lblAreaValue.Text = string.Empty;
+	        this.lblPerimeterValue.Text = string.Empty;
+        }
     }
 }
