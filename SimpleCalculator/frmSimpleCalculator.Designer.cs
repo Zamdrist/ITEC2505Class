@@ -38,12 +38,13 @@
             this.txtOperand2 = new System.Windows.Forms.TextBox();
             this.txtOperator = new System.Windows.Forms.TextBox();
             this.txtOperand1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnCalc
             // 
             this.btnCalc.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCalc.Location = new System.Drawing.Point(16, 339);
+            this.btnCalc.Location = new System.Drawing.Point(32, 339);
             this.btnCalc.Name = "btnCalc";
             this.btnCalc.Size = new System.Drawing.Size(86, 31);
             this.btnCalc.TabIndex = 4;
@@ -54,7 +55,7 @@
             // btnExit
             // 
             this.btnExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnExit.Location = new System.Drawing.Point(194, 339);
+            this.btnExit.Location = new System.Drawing.Point(223, 339);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(86, 31);
             this.btnExit.TabIndex = 5;
@@ -103,15 +104,16 @@
             this.lblResultValue.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblResultValue.Location = new System.Drawing.Point(143, 182);
             this.lblResultValue.Name = "lblResultValue";
-            this.lblResultValue.Size = new System.Drawing.Size(137, 23);
+            this.lblResultValue.Size = new System.Drawing.Size(166, 23);
             this.lblResultValue.TabIndex = 3;
             // 
             // txtOperand2
             // 
             this.txtOperand2.Location = new System.Drawing.Point(143, 141);
             this.txtOperand2.Name = "txtOperand2";
-            this.txtOperand2.Size = new System.Drawing.Size(137, 22);
+            this.txtOperand2.Size = new System.Drawing.Size(166, 22);
             this.txtOperand2.TabIndex = 2;
+            this.txtOperand2.TextChanged += new System.EventHandler(this.txtOperand2_TextChanged);
             // 
             // txtOperator
             // 
@@ -119,13 +121,24 @@
             this.txtOperator.Name = "txtOperator";
             this.txtOperator.Size = new System.Drawing.Size(40, 22);
             this.txtOperator.TabIndex = 1;
+            this.txtOperator.TextChanged += new System.EventHandler(this.txtOperator_TextChanged);
             // 
             // txtOperand1
             // 
             this.txtOperand1.Location = new System.Drawing.Point(143, 55);
             this.txtOperand1.Name = "txtOperand1";
-            this.txtOperand1.Size = new System.Drawing.Size(137, 22);
+            this.txtOperand1.Size = new System.Drawing.Size(166, 22);
             this.txtOperand1.TabIndex = 0;
+            this.txtOperand1.TextChanged += new System.EventHandler(this.txtOperand1_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(189, 96);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(68, 17);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "( +, -, *, /)";
             // 
             // FormSimpleCalculator
             // 
@@ -133,7 +146,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnExit;
-            this.ClientSize = new System.Drawing.Size(317, 382);
+            this.ClientSize = new System.Drawing.Size(353, 382);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.txtOperand1);
             this.Controls.Add(this.txtOperator);
             this.Controls.Add(this.txtOperand2);
@@ -166,6 +180,7 @@
         private System.Windows.Forms.TextBox txtOperand2;
         private System.Windows.Forms.TextBox txtOperator;
         private System.Windows.Forms.TextBox txtOperand1;
+        private System.Windows.Forms.Label label1;
     }
 }
 
