@@ -43,6 +43,8 @@ namespace AccumulatedScores
             this.ScoreAverage = default(double);
             this.ScoreCount = default(int);
             this.ScoreTotal = default(int);
+            this.ScoreMin = default(int);
+            this.ScoreMax = default(int);
 
         }
     }
