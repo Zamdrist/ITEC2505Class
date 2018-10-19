@@ -38,7 +38,12 @@
             this.lblScoreCountValue = new System.Windows.Forms.Label();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.btnDisplayScores = new System.Windows.Forms.Button();
+            this.btnClearScores = new System.Windows.Forms.Button();
+            this.btnShowScore = new System.Windows.Forms.Button();
+            this.lblScoreMinValue = new System.Windows.Forms.Label();
+            this.lblScoreMin = new System.Windows.Forms.Label();
+            this.lblScoreMaxValue = new System.Windows.Forms.Label();
+            this.lnlScoreMax = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblScore
@@ -82,7 +87,7 @@
             this.txtScore.Location = new System.Drawing.Point(141, 26);
             this.txtScore.Name = "txtScore";
             this.txtScore.Size = new System.Drawing.Size(104, 22);
-            this.txtScore.TabIndex = 4;
+            this.txtScore.TabIndex = 0;
             // 
             // lblScoreTotalValue
             // 
@@ -111,32 +116,77 @@
             // btnExit
             // 
             this.btnExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnExit.Location = new System.Drawing.Point(174, 190);
+            this.btnExit.Location = new System.Drawing.Point(285, 144);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(71, 28);
-            this.btnExit.TabIndex = 9;
+            this.btnExit.Size = new System.Drawing.Size(79, 107);
+            this.btnExit.TabIndex = 4;
             this.btnExit.Text = "E&xit";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(263, 26);
+            this.btnAdd.Location = new System.Drawing.Point(284, 26);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(80, 192);
-            this.btnAdd.TabIndex = 10;
+            this.btnAdd.Size = new System.Drawing.Size(80, 34);
+            this.btnAdd.TabIndex = 1;
             this.btnAdd.Text = "&Add";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // btnDisplayScores
+            // btnClearScores
             // 
-            this.btnDisplayScores.Location = new System.Drawing.Point(44, 190);
-            this.btnDisplayScores.Name = "btnDisplayScores";
-            this.btnDisplayScores.Size = new System.Drawing.Size(124, 28);
-            this.btnDisplayScores.TabIndex = 11;
-            this.btnDisplayScores.Text = "&Display Scores";
-            this.btnDisplayScores.UseVisualStyleBackColor = true;
+            this.btnClearScores.Location = new System.Drawing.Point(285, 105);
+            this.btnClearScores.Name = "btnClearScores";
+            this.btnClearScores.Size = new System.Drawing.Size(79, 34);
+            this.btnClearScores.TabIndex = 3;
+            this.btnClearScores.Text = "Clea&r";
+            this.btnClearScores.UseVisualStyleBackColor = true;
+            this.btnClearScores.Click += new System.EventHandler(this.btnClearScores_Click);
+            // 
+            // btnShowScore
+            // 
+            this.btnShowScore.Location = new System.Drawing.Point(285, 65);
+            this.btnShowScore.Name = "btnShowScore";
+            this.btnShowScore.Size = new System.Drawing.Size(79, 34);
+            this.btnShowScore.TabIndex = 2;
+            this.btnShowScore.Text = "&Show Scores";
+            this.btnShowScore.UseVisualStyleBackColor = true;
+            this.btnShowScore.Click += new System.EventHandler(this.btnShowScore_Click);
+            // 
+            // lblScoreMinValue
+            // 
+            this.lblScoreMinValue.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblScoreMinValue.Location = new System.Drawing.Point(141, 227);
+            this.lblScoreMinValue.Name = "lblScoreMinValue";
+            this.lblScoreMinValue.Size = new System.Drawing.Size(104, 24);
+            this.lblScoreMinValue.TabIndex = 14;
+            // 
+            // lblScoreMin
+            // 
+            this.lblScoreMin.AutoSize = true;
+            this.lblScoreMin.Location = new System.Drawing.Point(41, 227);
+            this.lblScoreMin.Name = "lblScoreMin";
+            this.lblScoreMin.Size = new System.Drawing.Size(71, 17);
+            this.lblScoreMin.TabIndex = 13;
+            this.lblScoreMin.Text = "Min Score";
+            // 
+            // lblScoreMaxValue
+            // 
+            this.lblScoreMaxValue.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblScoreMaxValue.Location = new System.Drawing.Point(141, 183);
+            this.lblScoreMaxValue.Name = "lblScoreMaxValue";
+            this.lblScoreMaxValue.Size = new System.Drawing.Size(104, 24);
+            this.lblScoreMaxValue.TabIndex = 16;
+            // 
+            // lnlScoreMax
+            // 
+            this.lnlScoreMax.AutoSize = true;
+            this.lnlScoreMax.Location = new System.Drawing.Point(41, 183);
+            this.lnlScoreMax.Name = "lnlScoreMax";
+            this.lnlScoreMax.Size = new System.Drawing.Size(74, 17);
+            this.lnlScoreMax.TabIndex = 15;
+            this.lnlScoreMax.Text = "Max Score";
             // 
             // AccumulatedScoresForm
             // 
@@ -144,8 +194,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnExit;
-            this.ClientSize = new System.Drawing.Size(356, 228);
-            this.Controls.Add(this.btnDisplayScores);
+            this.ClientSize = new System.Drawing.Size(387, 264);
+            this.Controls.Add(this.lblScoreMaxValue);
+            this.Controls.Add(this.lnlScoreMax);
+            this.Controls.Add(this.lblScoreMinValue);
+            this.Controls.Add(this.lblScoreMin);
+            this.Controls.Add(this.btnShowScore);
+            this.Controls.Add(this.btnClearScores);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.lblScoreCountValue);
@@ -159,6 +214,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AccumulatedScoresForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Accumulated Scores";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -177,7 +233,12 @@
         private System.Windows.Forms.Label lblScoreCountValue;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Button btnDisplayScores;
+        private System.Windows.Forms.Button btnClearScores;
+        private System.Windows.Forms.Button btnShowScore;
+        private System.Windows.Forms.Label lblScoreMinValue;
+        private System.Windows.Forms.Label lblScoreMin;
+        private System.Windows.Forms.Label lblScoreMaxValue;
+        private System.Windows.Forms.Label lnlScoreMax;
     }
 }
 
