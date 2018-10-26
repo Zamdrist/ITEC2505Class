@@ -41,10 +41,13 @@
             this.dgMainCourse.Location = new System.Drawing.Point(62, 72);
             this.dgMainCourse.Name = "dgMainCourse";
             this.dgMainCourse.ReadOnly = true;
+            this.dgMainCourse.RowHeadersVisible = false;
             this.dgMainCourse.RowTemplate.Height = 24;
             this.dgMainCourse.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgMainCourse.Size = new System.Drawing.Size(550, 311);
+            this.dgMainCourse.ShowEditingIcon = false;
+            this.dgMainCourse.Size = new System.Drawing.Size(311, 118);
             this.dgMainCourse.TabIndex = 0;
+            this.dgMainCourse.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgMainCourse_DataBindingComplete);
             // 
             // lblMainCourse
             // 
@@ -65,7 +68,7 @@
             this.Controls.Add(this.dgMainCourse);
             this.Name = "LunchOrderApp";
             this.Text = "Lunch Order";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.LunchOrderApp_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgMainCourse)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

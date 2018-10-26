@@ -21,21 +21,21 @@ namespace LunchOrderApp
             {
                 new MainCourseItem()
                 {
+	                Image = Properties.Resources.hamburger_color,
                     Item = LunchOrderItem.Hamburger,
-                    Price = Lunch.MainCoursePrice[0],
-                    Image = Properties.Resources.hamburger
+                    Price = Lunch.MainCoursePrice[0]
                 },
                 new MainCourseItem()
                 {
+	                Image = Properties.Resources.pizza_color,
                     Item = LunchOrderItem.Pizza,
-                    Price = Lunch.MainCoursePrice[1],
-                    Image = Properties.Resources.hamburger
+                    Price = Lunch.MainCoursePrice[1]
                 },
                 new MainCourseItem()
                 {
+	                Image = Properties.Resources.salad_color,
                     Item = LunchOrderItem.Salad,
-                    Price = Lunch.MainCoursePrice[2],
-                    Image = Properties.Resources.hamburger
+                    Price = Lunch.MainCoursePrice[2]
                 }
             };
 
@@ -103,9 +103,9 @@ namespace LunchOrderApp
 
     public struct MainCourseItem
     {
+	    public Bitmap Image { get; set; }
         public Lunch.LunchOrderItem Item { get; set; }
         public decimal Price { get; set; }
-        public Bitmap Image { get; set; }
     }
 
     public struct AddOnItem
