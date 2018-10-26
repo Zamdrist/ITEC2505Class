@@ -63,9 +63,29 @@ namespace LunchOrderApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap hamburger {
+        internal static System.Drawing.Bitmap hamburger_color {
             get {
-                object obj = ResourceManager.GetObject("hamburger", resourceCulture);
+                object obj = ResourceManager.GetObject("hamburger_color", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pizza_color {
+            get {
+                object obj = ResourceManager.GetObject("pizza_color", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap salad_color {
+            get {
+                object obj = ResourceManager.GetObject("salad_color", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
