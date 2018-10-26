@@ -16,20 +16,37 @@ namespace LunchOrderApp
         }
 
 
-        public List<MainCourseItem> MainCourse { get; set; } =
-            new List<MainCourseItem>
+        public MainCourseItem[] MainCourse { get; set; } =
+            new []
             {
                 new MainCourseItem()
                 {
 	                Image = Properties.Resources.hamburger_color,
-                    Item = LunchOrderItem.Hamburger,
-                    Price = Lunch.MainCoursePrice[0]
+			Item = LunchOrderItem.Hamburger,
+			Price = Lunch.MainCoursePrice[0],
+			AddOnItems = new[] {
+				new AddOnItem()
+				{
+				    Item = "Lettuce, Tomato, Onions",
+				    Price = Lunch.AddOnPrice[0]
+				},
+				new AddOnItem()
+				{
+				    Item = "Ketchup, Mustard, Mayo",
+				    Price = Lunch.AddOnPrice[0]
+				},
+				new AddOnItem()
+				{
+				    Item = "French Fries",
+				    Price = Lunch.AddOnPrice[0]
+				}
+			}
                 },
                 new MainCourseItem()
                 {
 	                Image = Properties.Resources.pizza_color,
-                    Item = LunchOrderItem.Pizza,
-                    Price = Lunch.MainCoursePrice[1]
+			Item = LunchOrderItem.Pizza,
+			Price = Lunch.MainCoursePrice[1]
                 },
                 new MainCourseItem()
                 {
@@ -42,24 +59,6 @@ namespace LunchOrderApp
         public List<AddOnItem> AddOn { get; set; } =
             new List<AddOnItem>
             {
-                new AddOnItem()
-                {
-                    MainCourseItem = LunchOrderItem.Hamburger,
-                    Item = "Lettuce, Tomato, Onions",
-                    Price = Lunch.AddOnPrice[0]
-                },
-                new AddOnItem()
-                {
-                    MainCourseItem = LunchOrderItem.Hamburger,
-                    Item = "Ketchup, Mustard, Mayo",
-                    Price = Lunch.AddOnPrice[0]
-                },
-                new AddOnItem()
-                {
-                    MainCourseItem = LunchOrderItem.Hamburger,
-                    Item = "French Fries",
-                    Price = Lunch.AddOnPrice[0]
-                },
                 new AddOnItem()
                 {
                     MainCourseItem = LunchOrderItem.Pizza,
@@ -103,9 +102,10 @@ namespace LunchOrderApp
 
     public struct MainCourseItem
     {
-	    public Bitmap Image { get; set; }
-        public Lunch.LunchOrderItem Item { get; set; }
-        public decimal Price { get; set; }
+	public Bitmap Image { get; set; }
+	public Lunch.LunchOrderItem Item { get; set; }
+	public decimal Price { get; set; }
+	public AddOnItem[] Addons;
     }
 
     public struct AddOnItem
@@ -113,7 +113,5 @@ namespace LunchOrderApp
         public Lunch.LunchOrderItem MainCourseItem { get; set; }
         public string Item { get; set; }
         public decimal Price { get; set; }
-
     }
-
 }
