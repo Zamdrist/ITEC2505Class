@@ -44,54 +44,63 @@ namespace LunchOrderApp
             {
                 new AddOnItem()
                 {
+					Image = Properties.Resources.lettuce_color,
                     MainCourseItem = LunchOrderItem.Hamburger,
                     Item = "Lettuce, Tomato, Onions",
                     Price = Lunch.AddOnPrice[0]
                 },
                 new AddOnItem()
                 {
+					Image = Properties.Resources.condiments_color,
                     MainCourseItem = LunchOrderItem.Hamburger,
                     Item = "Ketchup, Mustard, Mayo",
                     Price = Lunch.AddOnPrice[0]
                 },
                 new AddOnItem()
                 {
+					Image = Properties.Resources.frenchfries_color,
                     MainCourseItem = LunchOrderItem.Hamburger,
                     Item = "French Fries",
                     Price = Lunch.AddOnPrice[0]
                 },
                 new AddOnItem()
                 {
+					Image = Properties.Resources.pepperoni_color,
                     MainCourseItem = LunchOrderItem.Pizza,
                     Item = "Pepperoni",
                     Price = Lunch.AddOnPrice[1]
                 },
                 new AddOnItem()
                 {
+					Image = Properties.Resources.sausage_color,
                     MainCourseItem = LunchOrderItem.Pizza,
                     Item = "Sausage",
                     Price = Lunch.AddOnPrice[1]
                 },
                 new AddOnItem()
                 {
+					Image = Properties.Resources.olives_color,
                     MainCourseItem = LunchOrderItem.Pizza,
                     Item = "Olives",
                     Price = Lunch.AddOnPrice[1]
                 },
                 new AddOnItem()
                 {
+					Image = Properties.Resources.croutons_color,
                     MainCourseItem = LunchOrderItem.Salad,
                     Item = "Croutons",
                     Price = Lunch.AddOnPrice[2]
                 },
                 new AddOnItem()
                 {
+					Image = Properties.Resources.bacon_color,
                     MainCourseItem = LunchOrderItem.Salad,
                     Item = "Bacon bits",
                     Price = Lunch.AddOnPrice[2]
                 },
                 new AddOnItem()
                 {
+					Image = Properties.Resources.bread_color,
                     MainCourseItem = LunchOrderItem.Salad,
                     Item = "Bread sticks",
                     Price = Lunch.AddOnPrice[2]
@@ -110,10 +119,17 @@ namespace LunchOrderApp
 
     public struct AddOnItem
     {
+		public Bitmap Image { get; set; }
         public Lunch.LunchOrderItem MainCourseItem { get; set; }
         public string Item { get; set; }
         public decimal Price { get; set; }
 
     }
+
+	public struct OrderSummary
+	{
+		public string Item { get; set; }
+		public decimal Price { get; set; }
+	}
 
 }
