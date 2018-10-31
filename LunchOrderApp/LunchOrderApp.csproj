@@ -93,5 +93,35 @@
   <ItemGroup>
     <None Include="Resources\salad-color.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lettuce.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lettuce-color.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\condiments-color.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\frenchfries-color.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\croutons-color.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bread-color.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sausage-color.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\olives-color.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pepperoni-color.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bacon-color.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -118,13 +118,40 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="bacon_color" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bacon-color.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bread_color" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bread-color.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="condiments_color" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\condiments-color.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="croutons_color" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\croutons-color.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="frenchfries_color" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\frenchfries-color.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="hamburger_color" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\hamburger-color.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="lettuce_color" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lettuce-color.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="olives_color" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\olives-color.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pepperoni_color" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pepperoni-color.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="pizza_color" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pizza-color.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="salad_color" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\salad-color.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sausage_color" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sausage-color.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
