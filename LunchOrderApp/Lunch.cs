@@ -1,22 +1,68 @@
 ﻿using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace LunchOrderApp
 {
     public class Lunch
     {
-        private static readonly decimal[] MainCoursePrice = { 6.95m, 5.95m, 4.95m };
+	    private static readonly decimal[] MainCoursePrice = {6.95m, 5.95m, 4.95m};
         private static readonly decimal[] AddOnPrice = { 0.75m, 0.50m, 0.25m };
+	    private const decimal TaxRate = 0.0775m;
 
-        public enum LunchOrderItem
+
+	    public enum LunchOrderItem
         {
             Hamburger,
             Pizza,
             Salad
         }
 
+		public enum OrderSelectionType
+		{
+			MainCourse,
+			AddOn
+		}
 
-        public List<MainCourseItem> MainCourse { get; set; } =
+	    public decimal SubTotal { get; private set; }
+	    public decimal Tax { get; set; }
+	    public decimal Total { get; set; }
+
+
+	    public List<OrderSummary> OrderSummary(
+		    DataGridViewRow selectedMainCourseRow,
+		    DataGridViewSelectedRowCollection selectedAddOnRows)
+	    {
+		    var mainCourse = new OrderSummary
+		    {
+			    Item = selectedMainCourseRow
+				    .Cells["MainCourseItem"].Value.ToString(),
+			    OrderType = OrderSelectionType.MainCourse,
+			    Price = (decimal)selectedMainCourseRow.Cells["MainCoursePrice"].Value
+		    };
+
+		    var orderSummary = new List<OrderSummary> { mainCourse };
+
+		    foreach (DataGridViewRow selectedRow in selectedAddOnRows)
+		    {
+			    var addOn = new OrderSummary
+			    {
+				    Item = selectedRow.Cells["AddOnItem"].Value.ToString(),
+				    OrderType = OrderSelectionType.AddOn,
+				    Price = (decimal)selectedRow.Cells["AddOnPrice"].Value
+			    };
+			    orderSummary.Add(addOn);
+		    }
+
+		    this.SubTotal = orderSummary.Sum(p => p.Price);
+		    this.Tax = this.SubTotal * Lunch.TaxRate;
+		    this.Total = this.SubTotal + this.Tax;
+
+		    return orderSummary;
+	    }
+
+	    public List<MainCourseItem> MainCourse { get; set; } =
             new List<MainCourseItem>
             {
                 new MainCourseItem()
@@ -129,7 +175,9 @@ namespace LunchOrderApp
 	public struct OrderSummary
 	{
 		public string Item { get; set; }
+		public Lunch.OrderSelectionType OrderType { get; set; }
 		public decimal Price { get; set; }
+
 	}
 
 }
