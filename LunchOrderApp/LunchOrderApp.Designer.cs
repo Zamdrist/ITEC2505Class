@@ -44,9 +44,6 @@
             this.AddOnPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbOrderSunmary = new System.Windows.Forms.GroupBox();
             this.dgOrderSummary = new System.Windows.Forms.DataGridView();
-            this.OrderItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.OrderType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.OrderPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnExit = new System.Windows.Forms.Button();
             this.gbOrderTotal = new System.Windows.Forms.GroupBox();
             this.txtSubtotal = new System.Windows.Forms.TextBox();
@@ -57,6 +54,8 @@
             this.lblTotal = new System.Windows.Forms.Label();
             this.btnClearAll = new System.Windows.Forms.Button();
             this.lblHint = new System.Windows.Forms.Label();
+            this.OrderItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OrderPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgMainCourse)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgAddOns)).BeginInit();
             this.gbOrderSunmary.SuspendLayout();
@@ -221,7 +220,6 @@
             this.dgOrderSummary.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgOrderSummary.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.OrderItem,
-            this.OrderType,
             this.OrderPrice});
             this.dgOrderSummary.Enabled = false;
             this.dgOrderSummary.Location = new System.Drawing.Point(20, 35);
@@ -236,35 +234,6 @@
             this.dgOrderSummary.Size = new System.Drawing.Size(350, 327);
             this.dgOrderSummary.TabIndex = 0;
             this.dgOrderSummary.TabStop = false;
-            // 
-            // OrderItem
-            // 
-            this.OrderItem.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.OrderItem.DataPropertyName = "Item";
-            this.OrderItem.HeaderText = "Item";
-            this.OrderItem.Name = "OrderItem";
-            this.OrderItem.ReadOnly = true;
-            // 
-            // OrderType
-            // 
-            this.OrderType.DataPropertyName = "OrderType";
-            this.OrderType.FillWeight = 1F;
-            this.OrderType.HeaderText = "";
-            this.OrderType.Name = "OrderType";
-            this.OrderType.ReadOnly = true;
-            this.OrderType.Visible = false;
-            this.OrderType.Width = 5;
-            // 
-            // OrderPrice
-            // 
-            this.OrderPrice.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.OrderPrice.DataPropertyName = "Price";
-            dataGridViewCellStyle3.Format = "C2";
-            dataGridViewCellStyle3.NullValue = null;
-            this.OrderPrice.DefaultCellStyle = dataGridViewCellStyle3;
-            this.OrderPrice.HeaderText = "Price";
-            this.OrderPrice.Name = "OrderPrice";
-            this.OrderPrice.ReadOnly = true;
             // 
             // btnExit
             // 
@@ -372,6 +341,25 @@
             this.lblHint.TabIndex = 7;
             this.lblHint.Text = "Ctrl + Click = Select";
             // 
+            // OrderItem
+            // 
+            this.OrderItem.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.OrderItem.DataPropertyName = "Item";
+            this.OrderItem.HeaderText = "Item";
+            this.OrderItem.Name = "OrderItem";
+            this.OrderItem.ReadOnly = true;
+            // 
+            // OrderPrice
+            // 
+            this.OrderPrice.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.OrderPrice.DataPropertyName = "Price";
+            dataGridViewCellStyle3.Format = "C2";
+            dataGridViewCellStyle3.NullValue = null;
+            this.OrderPrice.DefaultCellStyle = dataGridViewCellStyle3;
+            this.OrderPrice.HeaderText = "Price";
+            this.OrderPrice.Name = "OrderPrice";
+            this.OrderPrice.ReadOnly = true;
+            // 
             // LunchOrderApp
             // 
             this.AcceptButton = this.btnClearAll;
@@ -420,9 +408,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn MainCourse;
         private System.Windows.Forms.DataGridViewTextBoxColumn AddOnItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn AddOnPrice;
-        private System.Windows.Forms.DataGridViewTextBoxColumn OrderItem;
-        private System.Windows.Forms.DataGridViewTextBoxColumn OrderType;
-        private System.Windows.Forms.DataGridViewTextBoxColumn OrderPrice;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.GroupBox gbOrderTotal;
         private System.Windows.Forms.TextBox txtSubtotal;
@@ -433,6 +418,8 @@
         private System.Windows.Forms.Label lblTax;
         private System.Windows.Forms.Button btnClearAll;
         private System.Windows.Forms.Label lblHint;
+        private System.Windows.Forms.DataGridViewTextBoxColumn OrderItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn OrderPrice;
     }
 }
 

@@ -19,12 +19,6 @@ namespace LunchOrderApp
             Salad
         }
 
-        public enum OrderSelectionType
-        {
-            MainCourse,
-            AddOn
-        }
-
         public decimal SubTotal { get; private set; }
         public decimal Tax { get; private set; }
         public decimal Total { get; private set; }
@@ -38,7 +32,6 @@ namespace LunchOrderApp
             {
                 Item = selectedMainCourseRow
                     .Cells["MainCourseItem"].Value.ToString(),
-                OrderType = OrderSelectionType.MainCourse,
                 Price = (decimal)selectedMainCourseRow.Cells["MainCoursePrice"].Value
             };
 
@@ -49,7 +42,6 @@ namespace LunchOrderApp
                 var addOn = new OrderSummary
                 {
                     Item = selectedRow.Cells["AddOnItem"].Value.ToString(),
-                    OrderType = OrderSelectionType.AddOn,
                     Price = (decimal)selectedRow.Cells["AddOnPrice"].Value
                 };
                 orderSummary.Add(addOn);
@@ -175,7 +167,6 @@ namespace LunchOrderApp
     public struct OrderSummary
     {
         public string Item { get; set; }
-        public Lunch.OrderSelectionType OrderType { get; set; }
         public decimal Price { get; set; }
 
     }
