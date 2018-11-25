@@ -3,10 +3,10 @@ using System.Collections.Generic;
 
 namespace CalculatorApp
 {
-    public class Calculator
+    public class Calculator : MemoryCalculator
     {
         private readonly List<string> _validOperators = new List<string>
-            {"+", "-", "*", "/", "Sqrt", "Reciprocal", "Sign"};
+            {"+", "-", "*", "/", "Sqrt", "Reciprocal"};
 
         private enum Operation
         {
@@ -15,8 +15,7 @@ namespace CalculatorApp
             Multiply,
             Divide,
             Sqrt,
-            Reciprocal,
-            Sign
+            Reciprocal
         }
 
         public double Operand { get; set; }
@@ -60,9 +59,7 @@ namespace CalculatorApp
                 case Operation.Reciprocal:
                     this.Result = 1 / this.Operand;
                     break;
-                case Operation.Sign:
-                    this.Result = this.Operand * -1;
-                    break;
+
             }
         }
     }

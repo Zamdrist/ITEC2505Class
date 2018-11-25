@@ -87,11 +87,9 @@ namespace CalculatorApp
 
         private void btnSign_Click(object sender, EventArgs e)
         {
-            var button = (Button) sender;
-            this._calculator.Operand = Convert.ToDouble(this.lblAnswer.Text);
-            this._calculator.Operator = button.Tag.ToString();
-            this._calculator.CalculateResult();
-            this.lblAnswer.Text = this._calculator.Result.ToString();
+
+	        this.lblAnswer.Text = (Convert.ToDouble(this.lblAnswer.Text) * -1).ToString();
+
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -100,6 +98,43 @@ namespace CalculatorApp
 	        {
 		        this.lblAnswer.Text = this.lblAnswer.Text.Substring(0, this.lblAnswer.Text.Length - 1);
 		        this._calculator.Operand = Convert.ToDouble(this.lblAnswer.Text);
+            }
+        }
+
+        private void btnDecimalPoint_Click(object sender, EventArgs e)
+        {
+
+	        this.lblAnswer.Text = this.lblAnswer.Text.Contains(".")
+		        ? this.lblAnswer.Text
+		        : $"{this.lblAnswer.Text}.";
+        }
+
+        private void btnMemoryClear_Click(object sender, EventArgs e)
+        {
+	        this._calculator.StoredValue = default(double);
+	        this.lblMemory.Text = string.Empty;
+        }
+
+        private void btnMemoryRecall_Click(object sender, EventArgs e)
+        {
+	        this.lblAnswer.Text = this._calculator.StoredValue.ToString();
+        }
+
+        private void btnMemoryStore_Click(object sender, EventArgs e)
+        {
+	        if (!string.IsNullOrEmpty(this.lblAnswer.Text))
+	        {
+		        this._calculator.StoredValue = Convert.ToDouble(this.lblAnswer.Text);
+		        this.lblMemory.Text = "M";
+	        }
+        }
+
+        private void btnMemorySum_Click(object sender, EventArgs e)
+        {
+	        if (!string.IsNullOrEmpty(this.lblAnswer.Text))
+	        {
+		        var theValue = Convert.ToDouble(this.lblAnswer.Text);
+		        this.lblAnswer.Text = this._calculator.MemorySum(theValue).ToString();
             }
         }
     }
