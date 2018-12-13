@@ -13,6 +13,11 @@ namespace TicketApp
 		public DateTime EndTime { get; set; }
 		public int FirstTicketNumber { get; set; }
 
+		public enum TicketAppStatus
+		{
+			Open,
+			Closed
+		}
 
 	}
 }
