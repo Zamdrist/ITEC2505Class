@@ -2,7 +2,7 @@
 
 namespace TicketApp
 {
-    class Ticket
+    public class Ticket
     {
 	    public decimal TicketNumber { get; set; }
 	    public DateTime TimeScheduled { get; set; }

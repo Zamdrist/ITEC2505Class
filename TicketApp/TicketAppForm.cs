@@ -15,11 +15,17 @@ namespace TicketApp
 		private int _counter = 1;
 		private bool _nextTimeSlot;
 		private int _minutes;
-		private string _status = "(Open)";
 
-        public TicketAppForm()
+		public TicketAppForm()
 		{
 			this.InitializeComponent();
+		}
+
+		private string ReturnStatus()
+		{
+
+			return "Open";
+
 		}
 
 		private void btnExit_Click(object sender, EventArgs e)
@@ -30,13 +36,13 @@ namespace TicketApp
 		private void TicketAppForm_Load(object sender, EventArgs e)
 		{
 			this.tmrTimeslot.Enabled = false;
-            this._optionsForm.Tag = this._timeSlot;
+			this._optionsForm.Tag = this._timeSlot;
 			this._optionsForm.ShowDialog();
 			this.Text = DateTime.Now.ToLongTimeString();
 			this.tmrTimeslot.Enabled = true;
-            this._ticketCounter = this._timeSlot.FirstTicketNumber;
+			this._ticketCounter = this._timeSlot.FirstTicketNumber;
 
-        }
+		}
 
 		private void btnOptions_Click(object sender, EventArgs e)
 		{
@@ -47,9 +53,10 @@ namespace TicketApp
 
 			if (dialogResult == DialogResult.OK)
 			{
+				this.lblGuestNumber.Text = string.Empty;
 				this.lstTickets.Items.Clear();
 				this.lblNextAvailableTime.Text = string.Empty;
-                this._tickets = null;
+				this._tickets = null;
 				this.tmrTimeslot.Enabled = false;
 				this._counter = 1;
 				this._timeSlot = new Timeslot();
@@ -57,10 +64,10 @@ namespace TicketApp
 				this._optionsForm.Tag = this._timeSlot;
 				this._optionsForm.ShowDialog();
 				this._ticketCounter = this._timeSlot.FirstTicketNumber;
-				this.Text = $"{DateTime.Now.ToLongTimeString()} {this._status}";
+				this.Text = $"{DateTime.Now.ToLongTimeString()} {this.ReturnStatus()}";
 				this.tmrTimeslot.Enabled = true;
 			}
-        }
+		}
 
 		private void btnIssueTicket_Click(object sender, EventArgs e)
 		{
@@ -76,15 +83,16 @@ namespace TicketApp
 				this._nextTimeSlot = true;
 				this._minutes = this._minutes + this._timeSlot.Minutes;
 			}
+
 			else
 			{
 				this._nextTimeSlot = false;
-            }
+			}
 
 			if (this._nextTimeSlot)
 			{
 				this._minutes = this._timeSlot.Minutes;
-                timeScheduled = this._timeSlot.StartTime.AddMinutes(this._minutes);
+				timeScheduled = this._timeSlot.StartTime.AddMinutes(this._minutes);
 				this._timeSlot.StartTime = timeScheduled;
 				this._counter = 1;
 				this._nextTimeSlot = false;
@@ -92,7 +100,7 @@ namespace TicketApp
 			}
 			else
 			{
-                timeScheduled = this._timeSlot.StartTime;
+				timeScheduled = this._timeSlot.StartTime;
 
 			}
 
@@ -102,7 +110,8 @@ namespace TicketApp
 			{
 				this._tickets = new List<Ticket>();
 			}
-            this._tickets.Add(
+
+			this._tickets.Add(
 				new Ticket {TicketNumber = this._ticketCounter++, TimeScheduled = timeScheduled});
 			this.PopulateTicketList(this._timeSlot.StartTime);
 
@@ -122,7 +131,7 @@ namespace TicketApp
 			{
 				this.lblNextAvailableTime.Text = nextAvailableEntry.ToLongTimeString();
 				this.lblOutstandingTickets.Text = this.lstTickets.Items.Count.ToString();
-            }
+			}
 			else
 			{
 				this.lblNextAvailableTime.Text = string.Empty;
@@ -133,20 +142,24 @@ namespace TicketApp
 
 		private void tmrTimeslot_Tick(object sender, EventArgs e)
 		{
+			var status = this.lstTickets.Items.Count == 0 && DateTime.Now < this._timeSlot.EndTime
+				? Timeslot.TicketAppStatus.Closed
+				: Timeslot.TicketAppStatus.Open;
+
 			if (string.IsNullOrEmpty(this.Text))
 			{
-				this.Text = $"{DateTime.Now.ToLongTimeString()} {this._status}";
+				this.Text = $"{DateTime.Now.ToLongTimeString()} {"- " + status}";
 			}
 			else
 			{
-				var currentTime = Convert.ToDateTime(this.Text.Replace(this._status, string.Empty));
-				this.Text = $"{currentTime.AddSeconds(1).ToLongTimeString()} {this._status}";
-            }
-
+				var currentTime = DateTime.Now;
+				this.Text = $"{currentTime:hh:mm:ss} ({status})";
+			}
 
 			if (this._tickets != null)
 			{
-				var expiredTickets = this._tickets.Where(t => t.TimeScheduled < DateTime.Now).ToList();
+				var expiredTickets =
+					this._tickets.Where(t => t.TimeScheduled < DateTime.Now).ToList();
 
 				if (expiredTickets.Count > 0)
 				{
@@ -161,8 +174,15 @@ namespace TicketApp
 					this._tickets.Remove(ticket);
 
 				}
+
 				this.PopulateTicketList(this._timeSlot.StartTime);
-            }
-        }
+			}
+
+			if (DateTime.Now == this._timeSlot.EndTime || DateTime.Now > this._timeSlot.EndTime)
+			{
+				this.btnIssueTicket.Enabled = false;
+			}
+		}
 	}
 }
+
