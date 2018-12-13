@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{55E13A0F-D703-4F2F-A165-BE1049B3034A}</ProjectGuid>
+    <ProjectGuid>{5BC0EC55-4E38-48C9-B522-C581789944C3}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>CalculatorApp</RootNamespace>
-    <AssemblyName>CalculatorApp</AssemblyName>
+    <RootNamespace>ProductMaintenanceApp</RootNamespace>
+    <AssemblyName>ProductMaintenanceApp</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -46,18 +46,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Calculator.cs" />
-    <Compile Include="CalculatorForm.cs">
+    <Compile Include="ProductMaintenanceForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CalculatorForm.Designer.cs">
-      <DependentUpon>CalculatorForm.cs</DependentUpon>
+    <Compile Include="ProductMaintenanceForm.Designer.cs">
+      <DependentUpon>ProductMaintenanceForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MemoryCalculator.cs" />
+    <Compile Include="ProductsDataSet.cs">
+      <DependentUpon>ProductsDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ProductsDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProductsDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="CalculatorForm.resx">
-      <DependentUpon>CalculatorForm.cs</DependentUpon>
+    <EmbeddedResource Include="ProductMaintenanceForm.resx">
+      <DependentUpon>ProductMaintenanceForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -68,6 +74,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="ProductsDataSet.xsc">
+      <DependentUpon>ProductsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ProductsDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ProductsDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ProductsDataSet.xss">
+      <DependentUpon>ProductsDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
