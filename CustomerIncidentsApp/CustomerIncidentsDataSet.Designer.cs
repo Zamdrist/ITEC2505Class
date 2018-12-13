@@ -741,8 +741,6 @@ namespace CustomerIncidentsApp {
             
             private global::System.Data.DataColumn columnProductCode;
             
-            private global::System.Data.DataColumn columnTechID;
-            
             private global::System.Data.DataColumn columnDateOpened;
             
             private global::System.Data.DataColumn columnDateClosed;
@@ -805,14 +803,6 @@ namespace CustomerIncidentsApp {
             public global::System.Data.DataColumn ProductCodeColumn {
                 get {
                     return this.columnProductCode;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn TechIDColumn {
-                get {
-                    return this.columnTechID;
                 }
             }
             
@@ -885,13 +875,12 @@ namespace CustomerIncidentsApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public IncidentsRow AddIncidentsRow(CustomersRow parentCustomersRowByFK_Incidents_Customers, ProductsRow parentProductsRowByFK_Incidents_Products, int TechID, System.DateTime DateOpened, System.DateTime DateClosed, string Title, string Description) {
+            public IncidentsRow AddIncidentsRow(CustomersRow parentCustomersRowByFK_Incidents_Customers, ProductsRow parentProductsRowByFK_Incidents_Products, System.DateTime DateOpened, System.DateTime DateClosed, string Title, string Description) {
                 IncidentsRow rowIncidentsRow = ((IncidentsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         null,
                         null,
-                        TechID,
                         DateOpened,
                         DateClosed,
                         Title,
@@ -934,7 +923,6 @@ namespace CustomerIncidentsApp {
                 this.columnIncidentID = base.Columns["IncidentID"];
                 this.columnCustomerID = base.Columns["CustomerID"];
                 this.columnProductCode = base.Columns["ProductCode"];
-                this.columnTechID = base.Columns["TechID"];
                 this.columnDateOpened = base.Columns["DateOpened"];
                 this.columnDateClosed = base.Columns["DateClosed"];
                 this.columnTitle = base.Columns["Title"];
@@ -950,8 +938,6 @@ namespace CustomerIncidentsApp {
                 base.Columns.Add(this.columnCustomerID);
                 this.columnProductCode = new global::System.Data.DataColumn("ProductCode", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnProductCode);
-                this.columnTechID = new global::System.Data.DataColumn("TechID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTechID);
                 this.columnDateOpened = new global::System.Data.DataColumn("DateOpened", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDateOpened);
                 this.columnDateClosed = new global::System.Data.DataColumn("DateClosed", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
@@ -1113,10 +1099,6 @@ namespace CustomerIncidentsApp {
             
             private global::System.Data.DataColumn columnName;
             
-            private global::System.Data.DataColumn columnVersion;
-            
-            private global::System.Data.DataColumn columnReleaseDate;
-            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public ProductsDataTable() {
@@ -1168,22 +1150,6 @@ namespace CustomerIncidentsApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn VersionColumn {
-                get {
-                    return this.columnVersion;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn ReleaseDateColumn {
-                get {
-                    return this.columnReleaseDate;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1219,13 +1185,11 @@ namespace CustomerIncidentsApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public ProductsRow AddProductsRow(string ProductCode, string Name, decimal Version, System.DateTime ReleaseDate) {
+            public ProductsRow AddProductsRow(string ProductCode, string Name) {
                 ProductsRow rowProductsRow = ((ProductsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ProductCode,
-                        Name,
-                        Version,
-                        ReleaseDate};
+                        Name};
                 rowProductsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowProductsRow);
                 return rowProductsRow;
@@ -1257,8 +1221,6 @@ namespace CustomerIncidentsApp {
             internal void InitVars() {
                 this.columnProductCode = base.Columns["ProductCode"];
                 this.columnName = base.Columns["Name"];
-                this.columnVersion = base.Columns["Version"];
-                this.columnReleaseDate = base.Columns["ReleaseDate"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1268,10 +1230,6 @@ namespace CustomerIncidentsApp {
                 base.Columns.Add(this.columnProductCode);
                 this.columnName = new global::System.Data.DataColumn("Name", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnName);
-                this.columnVersion = new global::System.Data.DataColumn("Version", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnVersion);
-                this.columnReleaseDate = new global::System.Data.DataColumn("ReleaseDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnReleaseDate);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnProductCode}, true));
                 this.columnProductCode.AllowDBNull = false;
@@ -1279,8 +1237,6 @@ namespace CustomerIncidentsApp {
                 this.columnProductCode.MaxLength = 10;
                 this.columnName.AllowDBNull = false;
                 this.columnName.MaxLength = 50;
-                this.columnVersion.AllowDBNull = false;
-                this.columnReleaseDate.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1604,22 +1560,6 @@ namespace CustomerIncidentsApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int TechID {
-                get {
-                    try {
-                        return ((int)(this[this.tableIncidents.TechIDColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'TechID\' in table \'Incidents\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableIncidents.TechIDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public System.DateTime DateOpened {
                 get {
                     return ((global::System.DateTime)(this[this.tableIncidents.DateOpenedColumn]));
@@ -1691,18 +1631,6 @@ namespace CustomerIncidentsApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsTechIDNull() {
-                return this.IsNull(this.tableIncidents.TechIDColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetTechIDNull() {
-                this[this.tableIncidents.TechIDColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsDateClosedNull() {
                 return this.IsNull(this.tableIncidents.DateClosedColumn);
             }
@@ -1747,28 +1675,6 @@ namespace CustomerIncidentsApp {
                 }
                 set {
                     this[this.tableProducts.NameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public decimal Version {
-                get {
-                    return ((decimal)(this[this.tableProducts.VersionColumn]));
-                }
-                set {
-                    this[this.tableProducts.VersionColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public System.DateTime ReleaseDate {
-                get {
-                    return ((global::System.DateTime)(this[this.tableProducts.ReleaseDateColumn]));
-                }
-                set {
-                    this[this.tableProducts.ReleaseDateColumn] = value;
                 }
             }
             
@@ -2081,12 +1987,29 @@ SELECT CustomerID, Name, Address, City, State, ZipCode, Phone, Email FROM Custom
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT CustomerID, Name, Address, City, State, ZipCode, Phone, Email FROM dbo.Cus" +
-                "tomers";
+            this._commandCollection[0].CommandText = "SELECT CustomerID, Name, Address, City, State, ZipCode, Phone, Email\r\nFROM     Cu" +
+                "stomers\r\nORDER BY City";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT CustomerID, Name, Address, City, State, ZipCode, Phone, Email FROM dbo.Cus" +
+                "tomers\r\nWhere CustomerId = @CustomerId";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CustomerId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "CustomerID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT CustomerID, Name, Address, City, State, ZipCode, Phone, Email\r\nFROM     Cu" +
+                "stomers\r\nWHERE  (State LIKE @State + \'%\')\r\nORDER BY City";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@State", global::System.Data.SqlDbType.VarChar, 2, global::System.Data.ParameterDirection.Input, 0, 0, "State", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "SELECT CustomerID, \r\nName, \r\nAddress, \r\nCity, \r\nState, \r\nZipCode, \r\nPhone, \r\nEmai" +
+                "l \r\nFROM dbo.Customers";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2111,6 +2034,52 @@ SELECT CustomerID, Name, Address, City, State, ZipCode, Phone, Email FROM Custom
             CustomerIncidentsDataSet.CustomersDataTable dataTable = new CustomerIncidentsDataSet.CustomersDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy(CustomerIncidentsDataSet.CustomersDataTable dataTable, int CustomerId) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(CustomerId));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy1(CustomerIncidentsDataSet.CustomersDataTable dataTable, string State) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((State == null)) {
+                throw new global::System.ArgumentNullException("State");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(State));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByCustomerId(CustomerIncidentsDataSet.CustomersDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2533,7 +2502,6 @@ SELECT CustomerID, Name, Address, City, State, ZipCode, Phone, Email FROM Custom
             tableMapping.ColumnMappings.Add("IncidentID", "IncidentID");
             tableMapping.ColumnMappings.Add("CustomerID", "CustomerID");
             tableMapping.ColumnMappings.Add("ProductCode", "ProductCode");
-            tableMapping.ColumnMappings.Add("TechID", "TechID");
             tableMapping.ColumnMappings.Add("DateOpened", "DateOpened");
             tableMapping.ColumnMappings.Add("DateClosed", "DateClosed");
             tableMapping.ColumnMappings.Add("Title", "Title");
@@ -2541,13 +2509,11 @@ SELECT CustomerID, Name, Address, City, State, ZipCode, Phone, Email FROM Custom
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Incidents] WHERE (([IncidentID] = @Original_IncidentID) AND ([CustomerID] = @Original_CustomerID) AND ([ProductCode] = @Original_ProductCode) AND ((@IsNull_TechID = 1 AND [TechID] IS NULL) OR ([TechID] = @Original_TechID)) AND ([DateOpened] = @Original_DateOpened) AND ((@IsNull_DateClosed = 1 AND [DateClosed] IS NULL) OR ([DateClosed] = @Original_DateClosed)) AND ([Title] = @Original_Title) AND ([Description] = @Original_Description))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Incidents] WHERE (([IncidentID] = @Original_IncidentID) AND ([CustomerID] = @Original_CustomerID) AND ([ProductCode] = @Original_ProductCode) AND ([DateOpened] = @Original_DateOpened) AND ((@IsNull_DateClosed = 1 AND [DateClosed] IS NULL) OR ([DateClosed] = @Original_DateClosed)) AND ([Title] = @Original_Title) AND ([Description] = @Original_Description))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IncidentID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IncidentID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CustomerID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CustomerID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ProductCode", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ProductCode", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_TechID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TechID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TechID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TechID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DateOpened", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateOpened", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DateClosed", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateClosed", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DateClosed", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateClosed", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -2555,24 +2521,22 @@ SELECT CustomerID, Name, Address, City, State, ZipCode, Phone, Email FROM Custom
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Description", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Description", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Incidents] ([CustomerID], [ProductCode], [TechID], [DateOpened], [DateClosed], [Title], [Description]) VALUES (@CustomerID, @ProductCode, @TechID, @DateOpened, @DateClosed, @Title, @Description);
-SELECT IncidentID, CustomerID, ProductCode, TechID, DateOpened, DateClosed, Title, Description FROM Incidents WHERE (IncidentID = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Incidents] ([CustomerID], [ProductCode], [DateOpened], [DateClosed], [Title], [Description]) VALUES (@CustomerID, @ProductCode, @DateOpened, @DateClosed, @Title, @Description);
+SELECT IncidentID, CustomerID, ProductCode, DateOpened, DateClosed, Title, Description FROM Incidents WHERE (IncidentID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CustomerID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CustomerID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ProductCode", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ProductCode", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TechID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TechID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateOpened", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateOpened", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateClosed", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateClosed", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Title", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Title", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Description", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Description", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Incidents] SET [CustomerID] = @CustomerID, [ProductCode] = @ProductCode, [TechID] = @TechID, [DateOpened] = @DateOpened, [DateClosed] = @DateClosed, [Title] = @Title, [Description] = @Description WHERE (([IncidentID] = @Original_IncidentID) AND ([CustomerID] = @Original_CustomerID) AND ([ProductCode] = @Original_ProductCode) AND ((@IsNull_TechID = 1 AND [TechID] IS NULL) OR ([TechID] = @Original_TechID)) AND ([DateOpened] = @Original_DateOpened) AND ((@IsNull_DateClosed = 1 AND [DateClosed] IS NULL) OR ([DateClosed] = @Original_DateClosed)) AND ([Title] = @Original_Title) AND ([Description] = @Original_Description));
-SELECT IncidentID, CustomerID, ProductCode, TechID, DateOpened, DateClosed, Title, Description FROM Incidents WHERE (IncidentID = @IncidentID)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Incidents] SET [CustomerID] = @CustomerID, [ProductCode] = @ProductCode, [DateOpened] = @DateOpened, [DateClosed] = @DateClosed, [Title] = @Title, [Description] = @Description WHERE (([IncidentID] = @Original_IncidentID) AND ([CustomerID] = @Original_CustomerID) AND ([ProductCode] = @Original_ProductCode) AND ([DateOpened] = @Original_DateOpened) AND ((@IsNull_DateClosed = 1 AND [DateClosed] IS NULL) OR ([DateClosed] = @Original_DateClosed)) AND ([Title] = @Original_Title) AND ([Description] = @Original_Description));
+SELECT IncidentID, CustomerID, ProductCode, DateOpened, DateClosed, Title, Description FROM Incidents WHERE (IncidentID = @IncidentID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CustomerID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CustomerID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ProductCode", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ProductCode", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TechID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TechID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateOpened", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateOpened", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateClosed", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateClosed", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Title", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Title", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -2580,8 +2544,6 @@ SELECT IncidentID, CustomerID, ProductCode, TechID, DateOpened, DateClosed, Titl
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IncidentID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IncidentID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CustomerID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CustomerID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ProductCode", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ProductCode", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_TechID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TechID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TechID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TechID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DateOpened", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateOpened", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DateClosed", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateClosed", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DateClosed", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateClosed", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -2603,8 +2565,8 @@ SELECT IncidentID, CustomerID, ProductCode, TechID, DateOpened, DateClosed, Titl
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT IncidentID, CustomerID, ProductCode, TechID, DateOpened, DateClosed, Title" +
-                ", Description FROM dbo.Incidents";
+            this._commandCollection[0].CommandText = "SELECT IncidentID, CustomerID, ProductCode, DateOpened, DateClosed, Title, Descri" +
+                "ption FROM Incidents";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -2665,7 +2627,7 @@ SELECT IncidentID, CustomerID, ProductCode, TechID, DateOpened, DateClosed, Titl
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_IncidentID, int Original_CustomerID, string Original_ProductCode, global::System.Nullable<int> Original_TechID, System.DateTime Original_DateOpened, global::System.Nullable<global::System.DateTime> Original_DateClosed, string Original_Title, string Original_Description) {
+        public virtual int Delete(int Original_IncidentID, int Original_CustomerID, string Original_ProductCode, System.DateTime Original_DateOpened, global::System.Nullable<global::System.DateTime> Original_DateClosed, string Original_Title, string Original_Description) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_IncidentID));
             this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_CustomerID));
             if ((Original_ProductCode == null)) {
@@ -2674,34 +2636,26 @@ SELECT IncidentID, CustomerID, ProductCode, TechID, DateOpened, DateClosed, Titl
             else {
                 this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_ProductCode));
             }
-            if ((Original_TechID.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_TechID.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.DeleteCommand.Parameters[5].Value = ((System.DateTime)(Original_DateOpened));
+            this.Adapter.DeleteCommand.Parameters[3].Value = ((System.DateTime)(Original_DateOpened));
             if ((Original_DateClosed.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((System.DateTime)(Original_DateClosed.Value));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((System.DateTime)(Original_DateClosed.Value));
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[7].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             if ((Original_Title == null)) {
                 throw new global::System.ArgumentNullException("Original_Title");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_Title));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_Title));
             }
             if ((Original_Description == null)) {
                 throw new global::System.ArgumentNullException("Original_Description");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((string)(Original_Description));
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((string)(Original_Description));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -2723,7 +2677,7 @@ SELECT IncidentID, CustomerID, ProductCode, TechID, DateOpened, DateClosed, Titl
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int CustomerID, string ProductCode, global::System.Nullable<int> TechID, System.DateTime DateOpened, global::System.Nullable<global::System.DateTime> DateClosed, string Title, string Description) {
+        public virtual int Insert(int CustomerID, string ProductCode, System.DateTime DateOpened, global::System.Nullable<global::System.DateTime> DateClosed, string Title, string Description) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(CustomerID));
             if ((ProductCode == null)) {
                 throw new global::System.ArgumentNullException("ProductCode");
@@ -2731,30 +2685,24 @@ SELECT IncidentID, CustomerID, ProductCode, TechID, DateOpened, DateClosed, Titl
             else {
                 this.Adapter.InsertCommand.Parameters[1].Value = ((string)(ProductCode));
             }
-            if ((TechID.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((int)(TechID.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(DateOpened));
+            this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(DateOpened));
             if ((DateClosed.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((System.DateTime)(DateClosed.Value));
+                this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(DateClosed.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             if ((Title == null)) {
                 throw new global::System.ArgumentNullException("Title");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(Title));
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(Title));
             }
             if ((Description == null)) {
                 throw new global::System.ArgumentNullException("Description");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(Description));
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(Description));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -2776,23 +2724,7 @@ SELECT IncidentID, CustomerID, ProductCode, TechID, DateOpened, DateClosed, Titl
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(
-                    int CustomerID, 
-                    string ProductCode, 
-                    global::System.Nullable<int> TechID, 
-                    System.DateTime DateOpened, 
-                    global::System.Nullable<global::System.DateTime> DateClosed, 
-                    string Title, 
-                    string Description, 
-                    int Original_IncidentID, 
-                    int Original_CustomerID, 
-                    string Original_ProductCode, 
-                    global::System.Nullable<int> Original_TechID, 
-                    System.DateTime Original_DateOpened, 
-                    global::System.Nullable<global::System.DateTime> Original_DateClosed, 
-                    string Original_Title, 
-                    string Original_Description, 
-                    int IncidentID) {
+        public virtual int Update(int CustomerID, string ProductCode, System.DateTime DateOpened, global::System.Nullable<global::System.DateTime> DateClosed, string Title, string Description, int Original_IncidentID, int Original_CustomerID, string Original_ProductCode, System.DateTime Original_DateOpened, global::System.Nullable<global::System.DateTime> Original_DateClosed, string Original_Title, string Original_Description, int IncidentID) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(CustomerID));
             if ((ProductCode == null)) {
                 throw new global::System.ArgumentNullException("ProductCode");
@@ -2800,69 +2732,55 @@ SELECT IncidentID, CustomerID, ProductCode, TechID, DateOpened, DateClosed, Titl
             else {
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(ProductCode));
             }
-            if ((TechID.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(TechID.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(DateOpened));
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(DateOpened));
             if ((DateClosed.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(DateClosed.Value));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(DateClosed.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             if ((Title == null)) {
                 throw new global::System.ArgumentNullException("Title");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Title));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Title));
             }
             if ((Description == null)) {
                 throw new global::System.ArgumentNullException("Description");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Description));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Description));
             }
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_IncidentID));
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_CustomerID));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_IncidentID));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_CustomerID));
             if ((Original_ProductCode == null)) {
                 throw new global::System.ArgumentNullException("Original_ProductCode");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_ProductCode));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_ProductCode));
             }
-            if ((Original_TechID.HasValue == true)) {
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((System.DateTime)(Original_DateOpened));
+            if ((Original_DateClosed.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_TechID.Value));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((System.DateTime)(Original_DateClosed.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[12].Value = ((System.DateTime)(Original_DateOpened));
-            if ((Original_DateClosed.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((System.DateTime)(Original_DateClosed.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
-            }
             if ((Original_Title == null)) {
                 throw new global::System.ArgumentNullException("Original_Title");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_Title));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_Title));
             }
             if ((Original_Description == null)) {
                 throw new global::System.ArgumentNullException("Original_Description");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_Description));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_Description));
             }
-            this.Adapter.UpdateCommand.Parameters[17].Value = ((int)(IncidentID));
+            this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(IncidentID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -2883,8 +2801,8 @@ SELECT IncidentID, CustomerID, ProductCode, TechID, DateOpened, DateClosed, Titl
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int CustomerID, string ProductCode, global::System.Nullable<int> TechID, System.DateTime DateOpened, global::System.Nullable<global::System.DateTime> DateClosed, string Title, string Description, int Original_IncidentID, int Original_CustomerID, string Original_ProductCode, global::System.Nullable<int> Original_TechID, System.DateTime Original_DateOpened, global::System.Nullable<global::System.DateTime> Original_DateClosed, string Original_Title, string Original_Description) {
-            return this.Update(CustomerID, ProductCode, TechID, DateOpened, DateClosed, Title, Description, Original_IncidentID, Original_CustomerID, Original_ProductCode, Original_TechID, Original_DateOpened, Original_DateClosed, Original_Title, Original_Description, Original_IncidentID);
+        public virtual int Update(int CustomerID, string ProductCode, System.DateTime DateOpened, global::System.Nullable<global::System.DateTime> DateClosed, string Title, string Description, int Original_IncidentID, int Original_CustomerID, string Original_ProductCode, System.DateTime Original_DateOpened, global::System.Nullable<global::System.DateTime> Original_DateClosed, string Original_Title, string Original_Description) {
+            return this.Update(CustomerID, ProductCode, DateOpened, DateClosed, Title, Description, Original_IncidentID, Original_CustomerID, Original_ProductCode, Original_DateOpened, Original_DateClosed, Original_Title, Original_Description, Original_IncidentID);
         }
     }
     
@@ -3011,19 +2929,14 @@ SELECT IncidentID, CustomerID, ProductCode, TechID, DateOpened, DateClosed, Titl
             tableMapping.DataSetTable = "Products";
             tableMapping.ColumnMappings.Add("ProductCode", "ProductCode");
             tableMapping.ColumnMappings.Add("Name", "Name");
-            tableMapping.ColumnMappings.Add("Version", "Version");
-            tableMapping.ColumnMappings.Add("ReleaseDate", "ReleaseDate");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Products] WHERE (([ProductCode] = @Original_ProductCode) AND (" +
-                "[Name] = @Original_Name) AND ([Version] = @Original_Version) AND ([ReleaseDate] " +
-                "= @Original_ReleaseDate))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [Products] WHERE (([ProductCode] = @Original_ProductCode) AND ([Name]" +
+                " = @Original_Name))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ProductCode", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ProductCode", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Version", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 1, "Version", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ReleaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ReleaseDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Products] ([ProductCode], [Name], [Version], [ReleaseDate]) VA" +
@@ -3036,17 +2949,14 @@ SELECT IncidentID, CustomerID, ProductCode, TechID, DateOpened, DateClosed, Titl
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ReleaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ReleaseDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Products] SET [ProductCode] = @ProductCode, [Name] = @Name, [Version] = @Version, [ReleaseDate] = @ReleaseDate WHERE (([ProductCode] = @Original_ProductCode) AND ([Name] = @Original_Name) AND ([Version] = @Original_Version) AND ([ReleaseDate] = @Original_ReleaseDate));
-SELECT ProductCode, Name, Version, ReleaseDate FROM Products WHERE (ProductCode = @ProductCode)";
+            this._adapter.UpdateCommand.CommandText = "UPDATE [Products] SET [ProductCode] = @ProductCode, [Name] = @Name WHERE (([Produ" +
+                "ctCode] = @Original_ProductCode) AND ([Name] = @Original_Name));\r\nSELECT Product" +
+                "Code, Name FROM Products WHERE (ProductCode = @ProductCode)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ProductCode", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ProductCode", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Version", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 1, "Version", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ReleaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ReleaseDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ProductCode", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ProductCode", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Version", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 1, "Version", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ReleaseDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ReleaseDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3062,7 +2972,7 @@ SELECT ProductCode, Name, Version, ReleaseDate FROM Products WHERE (ProductCode 
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ProductCode, Name, Version, ReleaseDate FROM dbo.Products";
+            this._commandCollection[0].CommandText = "SELECT ProductCode, Name FROM Products";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -3123,7 +3033,7 @@ SELECT ProductCode, Name, Version, ReleaseDate FROM Products WHERE (ProductCode 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(string Original_ProductCode, string Original_Name, decimal Original_Version, System.DateTime Original_ReleaseDate) {
+        public virtual int Delete(string Original_ProductCode, string Original_Name) {
             if ((Original_ProductCode == null)) {
                 throw new global::System.ArgumentNullException("Original_ProductCode");
             }
@@ -3136,8 +3046,6 @@ SELECT ProductCode, Name, Version, ReleaseDate FROM Products WHERE (ProductCode 
             else {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_Name));
             }
-            this.Adapter.DeleteCommand.Parameters[2].Value = ((decimal)(Original_Version));
-            this.Adapter.DeleteCommand.Parameters[3].Value = ((System.DateTime)(Original_ReleaseDate));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -3193,7 +3101,7 @@ SELECT ProductCode, Name, Version, ReleaseDate FROM Products WHERE (ProductCode 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string ProductCode, string Name, decimal Version, System.DateTime ReleaseDate, string Original_ProductCode, string Original_Name, decimal Original_Version, System.DateTime Original_ReleaseDate) {
+        public virtual int Update(string ProductCode, string Name, string Original_ProductCode, string Original_Name) {
             if ((ProductCode == null)) {
                 throw new global::System.ArgumentNullException("ProductCode");
             }
@@ -3206,22 +3114,18 @@ SELECT ProductCode, Name, Version, ReleaseDate FROM Products WHERE (ProductCode 
             else {
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Name));
             }
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((decimal)(Version));
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(ReleaseDate));
             if ((Original_ProductCode == null)) {
                 throw new global::System.ArgumentNullException("Original_ProductCode");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Original_ProductCode));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Original_ProductCode));
             }
             if ((Original_Name == null)) {
                 throw new global::System.ArgumentNullException("Original_Name");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Original_Name));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Original_Name));
             }
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((decimal)(Original_Version));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((System.DateTime)(Original_ReleaseDate));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -3242,8 +3146,8 @@ SELECT ProductCode, Name, Version, ReleaseDate FROM Products WHERE (ProductCode 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Name, decimal Version, System.DateTime ReleaseDate, string Original_ProductCode, string Original_Name, decimal Original_Version, System.DateTime Original_ReleaseDate) {
-            return this.Update(Original_ProductCode, Name, Version, ReleaseDate, Original_ProductCode, Original_Name, Original_Version, Original_ReleaseDate);
+        public virtual int Update(string Name, string Original_ProductCode, string Original_Name) {
+            return this.Update(Original_ProductCode, Name, Original_ProductCode, Original_Name);
         }
     }
     
