@@ -27,7 +27,7 @@ namespace CustomerIncidentsApp
 	        if (Validation.IsPresent(this.customerIDTextBox.Text, "Customer ID"))
 	        {
 				this._formAddNewIncident = new AddIncidentForm();
-                var idNamePair = new[] {this.customerIDTextBox.Text, this.nameTextBox.Text};
+		        var idNamePair = new[] {this.customerIDTextBox.Text, this.nameTextBox.Text};
 		        this._formAddNewIncident.Tag = idNamePair;
 		        var result = this._formAddNewIncident.ShowDialog(this);
 
