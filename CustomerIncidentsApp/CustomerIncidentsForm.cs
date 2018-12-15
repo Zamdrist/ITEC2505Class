@@ -5,8 +5,8 @@ namespace CustomerIncidentsApp
 {
     public partial class CustomerIncidentsForm : Form
     {
-		private readonly Form _formAddNewIncident = new AddIncidentForm();
-		private readonly Form _formSearchByState = new FindCustomerForm();
+		private Form _formAddNewIncident;
+		private Form _formSearchByState;
 
         public CustomerIncidentsForm()
         {
@@ -16,23 +16,39 @@ namespace CustomerIncidentsApp
 
         private void fillByToolStripButton_Click(object sender, EventArgs e)
         {
-            this.FillByCustomerId();
-
+	        if (Validation.IsPresent(this.customerIdToolStripTextBox.Text, "Customer ID"))
+	        {
+		        this.FillByCustomerId();
+            }
         }
 
         private void btnAddNewIncident_Click(object sender, EventArgs e)
         {
-	        if (!string.IsNullOrEmpty(this.customerIDTextBox.Text))
+	        if (Validation.IsPresent(this.customerIDTextBox.Text, "Customer ID"))
 	        {
-		        var idNamePair = new[] {this.customerIDTextBox.Text, this.nameTextBox.Text};
+				this._formAddNewIncident = new AddIncidentForm();
+                var idNamePair = new[] {this.customerIDTextBox.Text, this.nameTextBox.Text};
 		        this._formAddNewIncident.Tag = idNamePair;
-		        this._formAddNewIncident.ShowDialog(this);
+		        var result = this._formAddNewIncident.ShowDialog(this);
+
+		        if (result == DialogResult.OK)
+		        {
+			        this.FillByCustomerId();
+		        }
+		        this._formAddNewIncident.Dispose();
             }
         }
 
         private void tsBtnSearchByState_Click(object sender, EventArgs e)
         {
-	        this._formSearchByState.ShowDialog();
+	        this._formSearchByState = new FindCustomerForm();
+            var result = this._formSearchByState.ShowDialog();
+	        if (result == DialogResult.OK)
+	        {
+		        this.customerIdToolStripTextBox.Text = this._formSearchByState.Tag.ToString();
+		        this.FillByCustomerId();
+	        }
+	        this._formSearchByState.Dispose();
         }
 
         private void tsBtnClear_Click(object sender, EventArgs e)
@@ -53,7 +69,11 @@ namespace CustomerIncidentsApp
 	    {
 		    try
 		    {
-			    this.customersTableAdapter.FillBy(this.customerIncidentsDataSet.Customers, ((int)(System.Convert.ChangeType(customerIdToolStripTextBox.Text, typeof(int)))));
+			    this.customersTableAdapter.FillBy(
+				    this.customerIncidentsDataSet.Customers,
+				    ((int) (Convert.ChangeType(
+					    this.customerIdToolStripTextBox.Text,
+					    typeof(int)))));
 			    this.incidentsTableAdapter.Fill(this.customerIncidentsDataSet.Incidents);
             }
 		    catch (Exception ex)

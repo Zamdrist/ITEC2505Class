@@ -2001,15 +2001,15 @@ SELECT CustomerID, Name, Address, City, State, ZipCode, Phone, Email FROM Custom
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CustomerId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "CustomerID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT CustomerID, Name, Address, City, State, ZipCode, Phone, Email\r\nFROM     Cu" +
-                "stomers\r\nWHERE  (State LIKE @State + \'%\')\r\nORDER BY City";
+            this._commandCollection[2].CommandText = "SELECT CustomerID, \r\nName, \r\nAddress, \r\nCity, \r\nState, \r\nZipCode, \r\nPhone, \r\nEmai" +
+                "l \r\nFROM dbo.Customers";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@State", global::System.Data.SqlDbType.VarChar, 2, global::System.Data.ParameterDirection.Input, 0, 0, "State", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "SELECT CustomerID, \r\nName, \r\nAddress, \r\nCity, \r\nState, \r\nZipCode, \r\nPhone, \r\nEmai" +
-                "l \r\nFROM dbo.Customers";
+            this._commandCollection[3].CommandText = "SELECT CustomerID, Name, Address, City, State, ZipCode, Phone, Email\r\nFROM     Cu" +
+                "stomers\r\nWHERE  (State LIKE @State + \'%\')\r\nORDER BY City";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@State", global::System.Data.SqlDbType.VarChar, 2, global::System.Data.ParameterDirection.Input, 0, 0, "State", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2054,14 +2054,8 @@ SELECT CustomerID, Name, Address, City, State, ZipCode, Phone, Email FROM Custom
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillBy1(CustomerIncidentsDataSet.CustomersDataTable dataTable, string State) {
+        public virtual int FillByCustomerId(CustomerIncidentsDataSet.CustomersDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[2];
-            if ((State == null)) {
-                throw new global::System.ArgumentNullException("State");
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(State));
-            }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -2073,8 +2067,14 @@ SELECT CustomerID, Name, Address, City, State, ZipCode, Phone, Email FROM Custom
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillByCustomerId(CustomerIncidentsDataSet.CustomersDataTable dataTable) {
+        public virtual int FillByState(CustomerIncidentsDataSet.CustomersDataTable dataTable, string State) {
             this.Adapter.SelectCommand = this.CommandCollection[3];
+            if ((State == null)) {
+                throw new global::System.ArgumentNullException("State");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(State));
+            }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }

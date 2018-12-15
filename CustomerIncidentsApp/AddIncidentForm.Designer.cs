@@ -44,11 +44,9 @@
             this.customerIncidentsDataSet = new CustomerIncidentsApp.CustomerIncidentsDataSet();
             this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.productsTableAdapter = new CustomerIncidentsApp.CustomerIncidentsDataSetTableAdapters.ProductsTableAdapter();
-            this.customerIncidentsDataSet1 = new CustomerIncidentsApp.CustomerIncidentsDataSet();
             this.productsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.customerIncidentsDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerIncidentsDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -171,16 +169,7 @@
             // productsTableAdapter
             // 
             this.productsTableAdapter.ClearBeforeFill = true;
-            // 
-            // customerIncidentsDataSet1
-            // 
-            this.customerIncidentsDataSet1.DataSetName = "CustomerIncidentsDataSet";
-            this.customerIncidentsDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // productsBindingSource1
-            // 
-            this.productsBindingSource1.DataMember = "Products";
-            this.productsBindingSource1.DataSource = this.customerIncidentsDataSet1;
+            
             // 
             // AddIncidentForm
             // 
@@ -208,7 +197,6 @@
             this.Load += new System.EventHandler(this.AddIncidentForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.customerIncidentsDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerIncidentsDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -232,7 +220,6 @@
         private CustomerIncidentsDataSet customerIncidentsDataSet;
         private System.Windows.Forms.BindingSource productsBindingSource;
         private CustomerIncidentsDataSetTableAdapters.ProductsTableAdapter productsTableAdapter;
-        private CustomerIncidentsDataSet customerIncidentsDataSet1;
         private System.Windows.Forms.BindingSource productsBindingSource1;
     }
 }

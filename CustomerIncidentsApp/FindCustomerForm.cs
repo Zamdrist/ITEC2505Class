@@ -12,10 +12,7 @@ namespace CustomerIncidentsApp
 
         private void FindCustomerForm_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'customerIncidentsDataSet.Incidents' table. You can move, or remove it, as needed.
-            //this.incidentsTableAdapter.Fill(this.customerIncidentsDataSet.Incidents);
-            // TODO: This line of code loads data into the 'customerIncidentsDataSet.Customers' table. You can move, or remove it, as needed.
-            this.customersTableAdapter.Fill(this.customerIncidentsDataSet.Customers);
+	        this.customersTableAdapter.Fill(this.customerIncidentsDataSet.Customers);
 
         }
 
@@ -26,7 +23,14 @@ namespace CustomerIncidentsApp
 
         private void btnOk_Click(object sender, EventArgs e)
         {
-			this.Close();
+	        if (this.customersDataGridView.SelectedCells.Count == 0)
+	        {
+		        MessageBox.Show(
+			        "No selection made. Search again and select a customer",
+			        "Search By State");
+				return;
+	        }
+	        this.UseSelectedCustomer();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -58,7 +62,7 @@ namespace CustomerIncidentsApp
 	    {
 		    try
 		    {
-			    this.customersTableAdapter.FillBy1(
+			    this.customersTableAdapter.FillByState(
 				    this.customerIncidentsDataSet.Customers,
 				    this.stateToolStripTextBox.Text);
             }
@@ -66,6 +70,18 @@ namespace CustomerIncidentsApp
 		    {
 			    MessageBox.Show(ex.Message);
 		    }
+        }
+
+	    private void UseSelectedCustomer()
+	    {
+		    this.Tag = this.customersDataGridView.SelectedCells[0].Value.ToString();
+		    this.DialogResult = DialogResult.OK;
+			this.Close();
+	    }
+
+        private void customersDataGridView_DoubleClick(object sender, EventArgs e)
+        {
+			this.UseSelectedCustomer();
         }
     }
 }
