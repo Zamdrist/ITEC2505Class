@@ -55,8 +55,13 @@ namespace CustomerIncidentsApp
 
         private void tsBtnClear_Click(object sender, EventArgs e)
         {
-            this.customerIncidentsDataSet.Clear();
-            this.customerIdToolStripTextBox.Text = string.Empty;
+            this.ClearSearch();
+        }
+
+	    private void ClearSearch()
+	    {
+		    this.customerIncidentsDataSet.Clear();
+		    this.customerIdToolStripTextBox.Text = string.Empty;
         }
 
         private void customerIdToolStripTextBox_KeyDown(object sender, KeyEventArgs e)
@@ -71,12 +76,20 @@ namespace CustomerIncidentsApp
         {
             try
             {
-                this.customersTableAdapter.FillBy(
-                    this.customerIncidentsDataSet.Customers,
-                    ((int)(Convert.ChangeType(
-                        this.customerIdToolStripTextBox.Text,
-                        typeof(int)))));
-                this.incidentsTableAdapter.Fill(this.customerIncidentsDataSet.Incidents);
+	            var isNumeric = int.TryParse(this.customerIdToolStripTextBox.Text, out var i);
+
+	            if (!isNumeric)
+	            {
+		            this.ClearSearch();
+					return;
+                }
+
+	            this.customersTableAdapter.FillBy(
+		            this.customerIncidentsDataSet.Customers,
+		            ((int)(Convert.ChangeType(
+			            i,
+			            typeof(int)))));
+	            this.incidentsTableAdapter.Fill(this.customerIncidentsDataSet.Incidents);
             }
             catch (DBConcurrencyException)
             {
